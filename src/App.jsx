@@ -22,6 +22,9 @@ const App = () => {
     peopleService.getAll().then((people) => {
       setPersons(people)
     })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
   }, [])
 
   const addName = (event) => {
