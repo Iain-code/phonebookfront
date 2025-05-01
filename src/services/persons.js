@@ -1,8 +1,9 @@
 import axios from "axios"
 
-const baseUrl = "/api/persons"
+const baseUrl = "https://phonebookbe-szgd.onrender.com/api/persons";
 
 const getAll = () => {
+    console.log(`Calling API at: ${baseUrl}`);
     const request = axios.get(baseUrl)
     return request.then(response => response.data)
 }
