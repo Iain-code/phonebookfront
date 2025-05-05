@@ -7,6 +7,7 @@ export default defineConfig({
   preview: {
     allowedHosts: [
       "phonebookfront-cn1q.onrender.com",
+      "phonebookfront-3.onrender.com",
     ],
   },
   server: {
