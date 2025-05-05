@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     allowedHosts: [
-      'phonebookfront-3.onrender.com',
+      "phonebookfront-cn1q.onrender.com",
     ],
   },
   server: {
