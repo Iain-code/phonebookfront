@@ -7,7 +7,14 @@ export default defineConfig({
   preview: {
     allowedHosts: [
       'phonebookfront-3.onrender.com',
-      // other allowed hosts if necessary
     ],
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    }
   },
 })
