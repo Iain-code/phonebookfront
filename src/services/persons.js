@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "https://phonebookfront-3.onrender.com/api/persons";
+const baseUrl = "https://phonebookbe-1.onrender.com/api/persons";
 
 const getAll = () => {
     console.log(`Calling API at: ${baseUrl}`);
