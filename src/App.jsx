@@ -50,7 +50,6 @@ const App = () => {
 
         peopleService.update(personId[0].id, personObj)
           .then((returnedPerson) => {
-            console.log("HELLO THERE")
             setPersons(persons.map(person => person.id === returnedPerson.id ? returnedPerson : person))
             setNewName("")
             setNewNumber("")
