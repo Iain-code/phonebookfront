@@ -49,14 +49,10 @@ const App = () => {
         console.log(`person ID ${personId[0].id}`)
 
         peopleService.update(personId[0].id, personObj)
+          console.log(`personObj: ${personObj}`)
           .then((returnedPerson) => {
-            console.log("Update successful:", returnedPerson);
-            return peopleService.getAll()
-          })
-          .then((people) => {  
-            setPersons(people)
             console.log("HELLO THERE")
-            console.log(people)
+            setPersons(persons.concat(returnedPerson))
             setNewName("")
             setNewNumber("")
             setMessage(`${newName} has been added to the phonebook`)
