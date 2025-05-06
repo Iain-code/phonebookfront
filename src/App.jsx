@@ -50,10 +50,13 @@ const App = () => {
 
         peopleService.update(personId[0].id, personObj)
           .then((returnedPerson) => {
-            console.log(`returned person:`)
+            console.log("Update successful:", returnedPerson);
             return peopleService.getAll()
           })
           .then((people) => {  
+            setPersons(people)
+            console.log("HELLO THERE")
+            console.log(people)
             setNewName("")
             setNewNumber("")
             setMessage(`${newName} has been added to the phonebook`)
