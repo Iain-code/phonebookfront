@@ -48,18 +48,21 @@ const App = () => {
         const personId = persons.filter(person => person.name === newName)
         console.log(`person ID ${personId[0].id}`)
 
-        peopleService.update(personId[0].id, personObj).then((returnedPerson) => {
-          console.log(`returned person:`)
-          setNewName("")
-          setNewNumber("")
-          setMessage(`${newName} has been added to the phonebook`)
-          setTimeout(() => {
-            setMessage(null)
-          }, 5000)
+        peopleService.update(personId[0].id, personObj)
+          .then((returnedPerson) => {
+            console.log(`returned person:`)
+            return peopleService.getAll()
+          })
+          .then((people) => {  
+            setNewName("")
+            setNewNumber("")
+            setMessage(`${newName} has been added to the phonebook`)
+            setTimeout(() => {
+              setMessage(null)
+            }, 5000)
         })
-        peopleService.getAll().then((people) => {
-          console.log("GOT ALL")
-          setPersons(people)
+        .catch((error) => {
+          console.error("Error updating or fetching data", error)
         })
       }
     }
