@@ -80,7 +80,7 @@ const App = () => {
 }
 
 const deletePerson = (id) => {
-    console.log(id)
+    console.log(`Deleting user ID: ${id}`)
 
     peopleService.del(id).then(() => {
       setPersons(persons.filter(person => person.id !== id))
