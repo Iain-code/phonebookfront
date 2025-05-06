@@ -58,8 +58,8 @@ const App = () => {
               setMessage(null)
             }, 5000)
         })
-        .catch((error) => {
-          console.error("Error updating or fetching data", error)
+        .catch(error => {
+            setMessage(error.response.data.error)
         })
       }
     }
@@ -73,6 +73,9 @@ const App = () => {
           setTimeout(() => {
             setMessage(null)
           }, 5000)
+    })
+    .catch(error => {
+      setMessage(error.response.data.error)
     })
   }
 }
