@@ -59,14 +59,13 @@ const App = () => {
             }, 5000)
         })
         .catch(error => {
-            setError("FUCKED")
+          setError(error.response.data.error);
         })
       }
     }
     
     if (!exists) {
-      console.log("LETS SEE IF THIS APPEARS")
-    peopleService.create(personObj).then((returnedPerson) => {
+      peopleService.create(personObj).then((returnedPerson) => {
       setPersons(persons.concat(returnedPerson))
       setNewName("")
       setNewNumber("")
@@ -82,9 +81,6 @@ const App = () => {
       } else {
         setError('An unknown error occurred');
       }
-    })
-    .finally(() => {
-      console.log("PRINT THIS YOU FUCKER")
     })
   }
 }
