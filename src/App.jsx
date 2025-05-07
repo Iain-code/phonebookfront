@@ -3,7 +3,6 @@ import Person from "./components/Person"
 import Search from "./components/Search"
 import AddPerson from './components/AddPerson'
 import Notification from './components/Notification'
-import axios from 'axios'
 import peopleService from "./services/persons"
 import Error from "./components/Error"
 
@@ -97,7 +96,7 @@ const deletePerson = (id) => {
     peopleService.del(id).then(() => {
       setPersons(persons.filter(person => person.id !== id))
     })
-    .catch(error => {
+    .catch(() => {
       const bigP = persons.filter(person => person.id === id)
       setError(`Information for ${bigP[0].name} has already been removed`)
       setTimeout(() => {
