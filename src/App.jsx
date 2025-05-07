@@ -60,6 +60,9 @@ const App = () => {
         })
         .catch(error => {
           setError(error.response.data.error);
+          setTimeout(() => {
+            setError(null)
+          }, 5000)
         })
       }
     }
@@ -80,6 +83,9 @@ const App = () => {
         setError(error.response.data.error);
       } else {
         setError('An unknown error occurred');
+        setTimeout(() => {
+          setError(null)
+        }, 5000)
       }
     })
   }
