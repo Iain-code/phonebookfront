@@ -40,7 +40,7 @@ const App = () => {
     const msg = `${newName} already has a saved number. Would you like to update it?`
 
     if (exists && num) {
-      window.alert(`${newName} / ${newNumber} is already added to the phonebook`);
+      window.alert(`${newName} --- ${newNumber} is already added to the phonebook`);
     }
     if (exists && !num) {
       if (window.confirm(msg) === true) {
